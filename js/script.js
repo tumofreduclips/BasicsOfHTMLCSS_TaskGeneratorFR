@@ -10,6 +10,7 @@ function RandomColor() {
 function RandomPicture(){
 	var images = ['cat','butterfly','car','moto','baby','bike','football'];
 	var item = images[Math.floor(Math.random()*images.length)];
+	$(".imgfile").text("");
 
 	return (item);
 }
@@ -34,6 +35,7 @@ function setRandomColor() {
 	var h2color = RandomColor();
 	$("h2").css("color",h2color);
 	$(".h2color").html(h2color);
+
 }
 
 $(document).ready(
@@ -42,7 +44,7 @@ $(document).ready(
 		$("img").attr("src","img/"+RandomPicture()+".png");
 		$("img").css("width","300px");
 		html2canvas(document.body).then(canvas => {
-			$("#capture").empty();
-			$("body").html(canvas);
+			// $("#capture").empty();
+			// $("body").html(canvas);
 		});
 	});
