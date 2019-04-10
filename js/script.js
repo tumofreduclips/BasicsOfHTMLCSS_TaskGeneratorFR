@@ -39,10 +39,10 @@ function setRandomColor() {
 $(document).ready(
 	function(){
 		setRandomColor();
+		$("img").attr("src","img/"+RandomPicture()+".png");
+		$("img").css("width","300px");
 		html2canvas(document.body).then(canvas => {
-			$("img").attr("src","img/"+RandomPicture()+".png");
-			$("img").css("width","300px");
-			// $("#capture").empty();
-			// $("#capture").html(canvas);
+			$("#capture").empty();
+			$("body").html(canvas);
 		});
 	});
