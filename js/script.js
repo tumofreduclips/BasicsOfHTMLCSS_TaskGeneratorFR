@@ -10,7 +10,7 @@ function RandomColor() {
 function RandomPicture(){
 	var images = ['cat','butterfly','car','moto','baby','bike','football'];
 	var item = images[Math.floor(Math.random()*images.length)];
-	$(".imgfile").text("");
+	$(".imgfile").html("https://tumofreduclips.github.io/images/"+item+".png");
 
 	return (item);
 }
@@ -42,9 +42,9 @@ $(document).ready(
 	function(){
 		setRandomColor();
 		$("img").attr("src","img/"+RandomPicture()+".png");
-		$("img").css("width","300px");
+		$("img").css("width","400px");
 		html2canvas(document.body).then(canvas => {
-			// $("#capture").empty();
-			// $("body").html(canvas);
+			$("#capture").empty();
+			$("body").html(canvas);
 		});
 	});
